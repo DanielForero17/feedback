@@ -1,25 +1,30 @@
-/*
+
 import Resenia from "./Resenia"
 
-const ReseniaList = ({ listaresenias }) => {
+const ReseniaList = ( { listaresenias, deleteResenia } ) => {
 
             //condicional en caso de que no llegue el arreglo//
             if(!listaresenias || listaresenias.legth === 0){
-                return <p>No hay reseñas</p>
+                return  <p>No hay reseñas</p>
             }else{
-                return(
-                <div className="feedbak-list"
+                return (
+                <div className="feedbak-list" >
                 { listaresenias.map((resenia)=>
                 (
-                <Resenia key={resenia.id} resenia={resenia} />
+                <Resenia 
+                deleteResenia={deleteResenia}
+                key={resenia.id} 
+                resenia={resenia} />
                 )
-                )}
+                )
+                }
                 </div>
+                
             )
                     
                     
         }
                   
-                
+    }             
 
-export default ReseniaList; */
+export default ReseniaList; 
