@@ -4,8 +4,8 @@ import { useState } from "react";
 import Resenias from "./data/Resenias";
 //componentes
 import Header from "./componentes/Header";
-import Resenia from "./componentes/Resenia";
 import ReseniaList from "./componentes/ReseniaList";
+import FormResenia from "./componentes/FormResenia";
 
 function App(){
 
@@ -15,11 +15,14 @@ function App(){
 
     //metodo para borrar una resenia:
     const deleteResenia = id => {
-        window.confirm("estas seguro de borrar la resenia")
+        if(window.confirm("estas seguro de borrar la resenia")){
+            setListaResenias(lista_resenias.filter((resenia)=> resenia.id !==id))
+        }
     }       
 
     return (
         <div className="container">
+            <FormResenia></FormResenia>
              <ReseniaList
                 deleteResenia={deleteResenia}
                 listaresenias={lista_resenias}  />

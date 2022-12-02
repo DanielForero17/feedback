@@ -1,5 +1,6 @@
 import Resenia from "./Resenia"
 
+
 const ReseniaList = ( { listaresenias, deleteResenia  } ) => {
 
      //condicional en caso de 
