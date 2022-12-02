@@ -18,11 +18,21 @@ function App(){
         if(window.confirm("estas seguro de borrar la resenia")){
             setListaResenias(lista_resenias.filter((resenia)=> resenia.id !==id))
         }
-    }       
+    }
+    
+    //metodo para añadir la reseña del arreglo
+    const addResenia=(newResenia)=>{
+        // id a resenia
+        newResenia.id = lista_resenias.length + 1
+        setListaResenias( [ newResenia, ...lista_resenias ])
+    }
 
     return (
         <div className="container">
-            <FormResenia></FormResenia>
+            <FormResenia 
+                addResenia = {addResenia}
+            />
+
              <ReseniaList
                 deleteResenia={deleteResenia}
                 listaresenias={lista_resenias}  />

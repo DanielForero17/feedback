@@ -3,7 +3,7 @@ import Rating from "./Rating";
 import { useState } from "react";
 
 
-export const FormResenia = () => {
+export const FormResenia = ({addResenia}) => {
 
     //estados para rating y texto
     const[rating , setRating]= useState(10)
@@ -23,6 +23,8 @@ export const FormResenia = () => {
                 rating,
                 text
             }
+            //añadir la nueva reseña al arreglo
+            addResenia(newResenia)
 
 
         console.log(newResenia)
